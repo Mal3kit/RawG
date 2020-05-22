@@ -5,11 +5,11 @@ import xyz.kida.rawg.data.api.GameDisplayService;
 import xyz.kida.rawg.data.api.models.Game;
 import xyz.kida.rawg.data.api.models.GameSearchResponse;
 
-public class GameRemoteDataSource {
+public class GameDisplayRemoteDataSource {
 
     private GameDisplayService gameDisplayService;
 
-    public GameRemoteDataSource(GameDisplayService gameDisplayService) {
+    public GameDisplayRemoteDataSource(GameDisplayService gameDisplayService) {
         this.gameDisplayService = gameDisplayService;
     }
 

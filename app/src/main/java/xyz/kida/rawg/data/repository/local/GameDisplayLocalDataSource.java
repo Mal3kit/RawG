@@ -8,11 +8,11 @@ import io.reactivex.Single;
 import xyz.kida.rawg.data.db.GameDatabase;
 import xyz.kida.rawg.data.entity.GameEntity;
 
-public class GameLocalDataSource {
+public class GameDisplayLocalDataSource {
 
     private GameDatabase gameDatabase;
 
-    public GameLocalDataSource(GameDatabase gameDatabase) {
+    public GameDisplayLocalDataSource(GameDatabase gameDatabase) {
         this.gameDatabase = gameDatabase;
     }
 

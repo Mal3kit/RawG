@@ -8,7 +8,7 @@ import io.reactivex.Single;
 import xyz.kida.rawg.data.api.models.GameSearchResponse;
 import xyz.kida.rawg.data.entity.GameEntity;
 
-public interface GameRepository {
+public interface GameDisplayRepository {
 
     Single<GameSearchResponse> getGames(String gameName);
 
