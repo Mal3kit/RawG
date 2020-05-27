@@ -3,6 +3,7 @@
     package="xyz.kida.rawg">
 
     <application
+        android:name="xyz.kida.RawGApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

@@ -1,4 +1,4 @@
-package xyz.kida.rawg.ui.notifications;
+package xyz.kida.rawg.ui.search;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
