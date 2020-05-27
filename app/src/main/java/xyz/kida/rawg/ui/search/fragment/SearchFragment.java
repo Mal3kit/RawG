@@ -1,4 +1,4 @@
-package xyz.kida.rawg.ui.search;
+package xyz.kida.rawg.ui.search.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

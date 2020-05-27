@@ -1,22 +1,10 @@
-package xyz.kida.rawg.data.api.models;
+package xyz.kida.rawg.ui.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+public class GameViewModel {
 
-public class Game {
-
-    @SerializedName("slug")
-    @Expose
     private String id;
-
-    @SerializedName("name")
-    @Expose
     private String name;
-
-    @SerializedName("background_image")
-    @Expose
     private String imageUrl;
-
     private boolean isFavorite;
 
     public String getId() {
