@@ -12,9 +12,9 @@ public interface GameDisplayRepository {
 
     Single<GameSearchResponse> getGames(String gameName);
 
-    Flowable<List<GameEntity>> loadCollection();
+    Flowable<List<GameEntity>> loadFavorites();
 
     Completable addGameToCollection(String gameId);
 
-    Completable removeGameFromCollection(String gameId);
+    Completable removeGameFromFavorites(String gameId);
 }

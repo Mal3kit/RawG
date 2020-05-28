@@ -44,7 +44,7 @@ public class GameDisplayDataRepository implements GameDisplayRepository {
     }
 
     @Override
-    public Flowable<List<GameEntity>> loadCollection() {
+    public Flowable<List<GameEntity>> loadFavorites() {
         return gameDisplayLocalDataSource.loadCollection();
     }
 
@@ -66,7 +66,7 @@ public class GameDisplayDataRepository implements GameDisplayRepository {
     }
 
     @Override
-    public Completable removeGameFromCollection(String gameId) {
+    public Completable removeGameFromFavorites(String gameId) {
         return gameDisplayLocalDataSource.deleteGameFromCollection(gameId);
     }
 }
