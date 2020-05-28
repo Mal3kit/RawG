@@ -41,7 +41,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
     public SearchViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.item_game, parent, false);
+        View view = layoutInflater.inflate(R.layout.item_game_search, parent, false);
         return new SearchViewHolder(view, searchListener);
     }
 

@@ -8,6 +8,7 @@ public class GameToGameViewModelMapper {
         GameViewModel gameViewModel = new GameViewModel();
         gameViewModel.setId(game.getId());
         gameViewModel.setName(game.getName());
+        gameViewModel.setRating(game.getRating() + "/5");
         gameViewModel.setImageUrl(game.getImageUrl());
         gameViewModel.setFavorite(game.isFavorite());
 

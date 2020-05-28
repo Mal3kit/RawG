@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/game_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_game" />
+
+        <TextView
+            android:id="@+id/game_name_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/game_rating_textview"
+            app:layout_constraintLeft_toLeftOf="@id/game_imageview"
+            app:layout_constraintTop_toBottomOf="@id/game_imageview"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="My Game name" />
+
+        <TextView
+            android:id="@+id/game_rating_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="@id/game_name_textview"
+            app:layout_constraintRight_toLeftOf="@id/add_button"
+            app:layout_constraintTop_toBottomOf="@id/game_name_textview"
+            tools:text="X.XX" />
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_add_button"
+            app:layout_constraintTop_toBottomOf="@id/game_imageview"
+            app:layout_constraintRight_toRightOf="@id/game_imageview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

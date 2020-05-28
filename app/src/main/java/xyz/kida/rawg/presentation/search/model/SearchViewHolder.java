@@ -45,8 +45,8 @@ public class SearchViewHolder extends RecyclerView.ViewHolder {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO : set fav ?
                 searchListener.onAddGameToFavorites(gameViewModel.getId());
+                addButton.setVisibility(View.INVISIBLE);
             }
         });
     }
@@ -58,7 +58,6 @@ public class SearchViewHolder extends RecyclerView.ViewHolder {
         addButton.setVisibility(gameViewModel.isFavorite() ? View.INVISIBLE : View.VISIBLE);
         Glide.with(view)
                 .load(gameViewModel.getImageUrl())
-                .circleCrop()
                 .centerCrop()
                 .into(gameImageView);
     }

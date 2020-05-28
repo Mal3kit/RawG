@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="xyz.kida.rawg.presentation.dashboard.DashboardFragment"
+        android:name="xyz.kida.rawg.presentation.collection.CollectionFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_collection" />
 
     <fragment
         android:id="@+id/navigation_search"

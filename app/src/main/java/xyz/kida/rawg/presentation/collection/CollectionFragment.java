@@ -1,4 +1,4 @@
-package xyz.kida.rawg.presentation.dashboard;
+package xyz.kida.rawg.presentation.collection;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import xyz.kida.rawg.R;
 
-public class DashboardFragment extends Fragment {
+public class CollectionFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
 
@@ -22,7 +22,7 @@ public class DashboardFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View root = inflater.inflate(R.layout.fragment_collection, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

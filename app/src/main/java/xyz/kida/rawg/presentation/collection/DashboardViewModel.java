@@ -1,4 +1,4 @@
-package xyz.kida.rawg.presentation.dashboard;
+package xyz.kida.rawg.presentation.collection;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
