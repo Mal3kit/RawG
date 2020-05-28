@@ -35,7 +35,7 @@ public class GameDisplayDataRepository implements GameDisplayRepository {
                     public GameSearchResponse apply(GameSearchResponse gameSearchResponse, List<String> idList) throws Exception {
                         for (Game game : gameSearchResponse.getGames()) {
                             if (idList.contains(game.getId())) {
-                                game.setFavorite(true);
+                                game.setFavorite();
                             }
                         }
                         return gameSearchResponse;

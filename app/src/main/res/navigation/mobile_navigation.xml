@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/list_videos">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="xyz.kida.rawg.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:id="@+id/list_videos"
+        android:name="xyz.kida.rawg.presentation.home.HomeFragment"
+        android:label="@string/title_videos"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="xyz.kida.rawg.ui.dashboard.DashboardFragment"
+        android:name="xyz.kida.rawg.presentation.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="xyz.kida.rawg.ui.search.fragment.SearchFragment"
+        android:name="xyz.kida.rawg.presentation.search.fragment.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 </navigation>

@@ -8,7 +8,8 @@ public class GameToGameEntityMapper {
     public GameEntity toGameEntity(Game game) {
         GameEntity gameEntity = new GameEntity();
         gameEntity.setId(game.getId());
-        gameEntity.setGameName(game.getName());
+        gameEntity.setName(game.getName());
+        gameEntity.setRating(game.getRating());
         gameEntity.setImageUrl(game.getImageUrl());
 
         return gameEntity;

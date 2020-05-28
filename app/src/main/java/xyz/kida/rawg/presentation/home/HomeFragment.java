@@ -1,4 +1,4 @@
-package xyz.kida.rawg.ui.home;
+package xyz.kida.rawg.presentation.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

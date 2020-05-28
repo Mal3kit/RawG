@@ -1,4 +1,4 @@
-package xyz.kida.rawg.ui.dashboard;
+package xyz.kida.rawg.presentation.dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

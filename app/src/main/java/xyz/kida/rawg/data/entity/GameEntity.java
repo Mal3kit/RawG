@@ -10,7 +10,8 @@ public class GameEntity {
     @NonNull
     @PrimaryKey
     private String id;
-    private String gameName;
+    private String name;
+    private String rating;
     private String imageUrl;
 
     @NonNull
@@ -22,12 +23,20 @@ public class GameEntity {
         this.id = id;
     }
 
-    public String getGameName() {
-        return gameName;
+    public String getName() {
+        return name;
     }
 
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 
     public String getImageUrl() {

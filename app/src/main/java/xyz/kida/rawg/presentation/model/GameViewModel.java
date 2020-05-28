@@ -1,9 +1,10 @@
-package xyz.kida.rawg.ui.model;
+package xyz.kida.rawg.presentation.model;
 
 public class GameViewModel {
 
     private String id;
     private String name;
+    private String rating;
     private String imageUrl;
     private boolean isFavorite;
 
@@ -23,6 +24,14 @@ public class GameViewModel {
         this.name = name;
     }
 
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
@@ -35,7 +44,7 @@ public class GameViewModel {
         return isFavorite;
     }
 
-    public void setFavorite(boolean favorite) {
-        isFavorite = favorite;
+    public void setFavorite(boolean isFavorite) {
+        this.isFavorite = isFavorite;
     }
 }

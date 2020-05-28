@@ -13,6 +13,10 @@ public class Game {
     @Expose
     private String name;
 
+    @SerializedName("rating")
+    @Expose
+    private String rating;
+
     @SerializedName("background_image")
     @Expose
     private String imageUrl;
@@ -35,6 +39,14 @@ public class Game {
         this.name = name;
     }
 
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
@@ -47,7 +59,7 @@ public class Game {
         return isFavorite;
     }
 
-    public void setFavorite(boolean favorite) {
-        isFavorite = favorite;
+    public void setFavorite() {
+        isFavorite = true;
     }
 }

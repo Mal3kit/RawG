@@ -12,6 +12,6 @@ public interface GameDisplayService {
     @GET("games")
     Single<GameSearchResponse> findGamesByName(@Query("search") String gameName);
 
-    @GET("{gameId}")
+    @GET("games/{gameId}")
     Single<Game> getGame(@Path("gameId") String gameId);
 }
