@@ -7,13 +7,13 @@ public class VideoThumbnail {
 
     @SerializedName("medium")
     @Expose
-    private ImageUrl url;
+    private ImageUrl imageUrl;
 
-    public ImageUrl getUrl() {
-        return url;
+    public ImageUrl getImageUrl() {
+        return imageUrl;
     }
 
-    public void setUrl(ImageUrl url) {
-        this.url = url;
+    public void setImageUrl(ImageUrl imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

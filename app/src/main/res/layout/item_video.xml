@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp"
+    android:background="#252525">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="#252525">
+
+        <ImageView
+            android:id="@+id/video_thumbnail_imageview"
+            android:layout_width="120dp"
+            android:layout_height="105dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:src="@drawable/ic_game" />
+
+        <TextView
+            android:id="@+id/video_title_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/video_thumbnail_imageview"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Video Title" />
+
+        <TextView
+            android:id="@+id/video_channel_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="@id/video_title_textview"
+            app:layout_constraintTop_toBottomOf="@id/video_title_textview"
+            app:layout_constraintBottom_toTopOf="@id/video_count_textview"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Channel name" />
+
+
+        <TextView
+            android:id="@+id/video_count_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="@id/video_title_textview"
+            app:layout_constraintBottom_toBottomOf="@id/video_thumbnail_imageview"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="XXXX" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

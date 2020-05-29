@@ -6,7 +6,7 @@
     android:background="#1b1b1b">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/favorite_fragment_recycler_view"
+        android:id="@+id/video_fragment_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />

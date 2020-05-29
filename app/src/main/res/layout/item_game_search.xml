@@ -7,11 +7,14 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginBottom="5dp"
-    app:cardCornerRadius="5dp">
+    app:cardCornerRadius="5dp"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="#252525">
 
         <ImageView
             android:id="@+id/game_imageview"
@@ -26,6 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"
             android:textSize="13sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/game_rating_textview"
@@ -38,6 +42,7 @@
             android:id="@+id/game_rating_textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="#ffffff"
             android:textSize="10sp"
             app:layout_constraintLeft_toLeftOf="@id/game_name_textview"
             app:layout_constraintRight_toLeftOf="@id/add_button"
@@ -49,8 +54,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/ic_add_button"
-            app:layout_constraintTop_toBottomOf="@id/game_imageview"
-            app:layout_constraintRight_toRightOf="@id/game_imageview" />
+            app:layout_constraintRight_toRightOf="@id/game_imageview"
+            app:layout_constraintTop_toBottomOf="@id/game_imageview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

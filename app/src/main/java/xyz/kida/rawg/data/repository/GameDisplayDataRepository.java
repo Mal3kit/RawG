@@ -1,5 +1,6 @@
 package xyz.kida.rawg.data.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Completable;
@@ -72,7 +73,12 @@ public class GameDisplayDataRepository implements GameDisplayRepository {
     }
 
     @Override
-    public Single<GameVideoSearchResponse> getVideosForGame(String gameId) {
+    public Single<List<String>> getFavoriteGamesId() {
+        return gameDisplayLocalDataSource.getCollectionListId();
+    }
+
+    @Override
+    public Single<GameVideoSearchResponse> getVideosForFavoriteGames(String gameId) {
         return gameDisplayRemoteDataSource.getVideoSearchResponse(gameId);
     }
 }

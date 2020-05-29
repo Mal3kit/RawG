@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class GameVideo {
 
-    @SerializedName("id")
+    @SerializedName("external_id")
     @Expose
     private String id;
 
@@ -63,5 +63,9 @@ public class GameVideo {
 
     public void setVideoThumbnail(VideoThumbnail videoThumbnail) {
         this.videoThumbnail = videoThumbnail;
+    }
+
+    public String getImageUrl() {
+        return this.videoThumbnail.getImageUrl().getUrl();
     }
 }

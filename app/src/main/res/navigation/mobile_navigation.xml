@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/list_videos"
-        android:name="xyz.kida.rawg.presentation.home.HomeFragment"
+        android:name="xyz.kida.rawg.presentation.video.fragment.GameVideoFragment"
         android:label="@string/title_videos"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_video" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
