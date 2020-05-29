@@ -4,6 +4,7 @@ import io.reactivex.Single;
 import xyz.kida.rawg.data.api.GameDisplayService;
 import xyz.kida.rawg.data.api.models.Game;
 import xyz.kida.rawg.data.api.models.GameSearchResponse;
+import xyz.kida.rawg.data.api.models.GameVideoSearchResponse;
 
 public class GameDisplayRemoteDataSource {
 
@@ -19,5 +20,9 @@ public class GameDisplayRemoteDataSource {
 
     public Single<Game> getGameDetails(String gameId) {
         return gameDisplayService.getGame(gameId);
+    }
+
+    public Single<GameVideoSearchResponse> getVideoSearchResponse(String gameId) {
+        return gameDisplayService.findVideoForGame(gameId);
     }
 }

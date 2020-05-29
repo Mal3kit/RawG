@@ -6,6 +6,7 @@ import io.reactivex.Completable;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
 import xyz.kida.rawg.data.api.models.GameSearchResponse;
+import xyz.kida.rawg.data.api.models.GameVideoSearchResponse;
 import xyz.kida.rawg.data.entity.GameEntity;
 
 public interface GameDisplayRepository {
@@ -17,4 +18,6 @@ public interface GameDisplayRepository {
     Completable addGameToCollection(String gameId);
 
     Completable removeGameFromFavorites(String gameId);
+
+    Single<GameVideoSearchResponse> getVideosForGame(String gameId);
 }

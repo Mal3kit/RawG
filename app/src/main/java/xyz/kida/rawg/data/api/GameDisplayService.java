@@ -6,6 +6,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 import xyz.kida.rawg.data.api.models.Game;
 import xyz.kida.rawg.data.api.models.GameSearchResponse;
+import xyz.kida.rawg.data.api.models.GameVideoSearchResponse;
 
 public interface GameDisplayService {
 
@@ -14,4 +15,7 @@ public interface GameDisplayService {
 
     @GET("games/{gameId}")
     Single<Game> getGame(@Path("gameId") String gameId);
+
+    @GET("games/{gameId}/youtube")
+    Single<GameVideoSearchResponse> findVideoForGame(@Path("gameId") String gameId);
 }

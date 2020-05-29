@@ -10,6 +10,7 @@ import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import xyz.kida.rawg.data.api.models.Game;
 import xyz.kida.rawg.data.api.models.GameSearchResponse;
+import xyz.kida.rawg.data.api.models.GameVideoSearchResponse;
 import xyz.kida.rawg.data.entity.GameEntity;
 import xyz.kida.rawg.data.repository.local.GameDisplayLocalDataSource;
 import xyz.kida.rawg.data.repository.mapper.GameToGameEntityMapper;
@@ -68,5 +69,10 @@ public class GameDisplayDataRepository implements GameDisplayRepository {
     @Override
     public Completable removeGameFromFavorites(String gameId) {
         return gameDisplayLocalDataSource.deleteGameFromCollection(gameId);
+    }
+
+    @Override
+    public Single<GameVideoSearchResponse> getVideosForGame(String gameId) {
+        return gameDisplayRemoteDataSource.getVideoSearchResponse(gameId);
     }
 }
