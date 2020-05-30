@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RawG</string>
     <string name="title_videos">Videos</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_favorites">Favorites</string>
     <string name="title_search">Search</string>
     <string name="search_hint">Enter a game name</string>
 </resources>

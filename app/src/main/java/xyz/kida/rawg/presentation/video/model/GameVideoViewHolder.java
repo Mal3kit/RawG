@@ -52,8 +52,8 @@ public class GameVideoViewHolder extends RecyclerView.ViewHolder {
     public void updateWithGameVideoView(GameVideoViewModel gameVideoViewModel) {
         this.gameVideoViewModel = gameVideoViewModel;
         this.gameVideoTitleTextView.setText(gameVideoViewModel.getName());
-        this.gameVideoChannelNameTextView.setText(gameVideoViewModel.getChannelName());
-        this.gameVideoViewsTextView.setText(gameVideoViewModel.getViewCount().toString());
+        this.gameVideoChannelNameTextView.setText("Channel : " + gameVideoViewModel.getChannelName());
+        this.gameVideoViewsTextView.setText(gameVideoViewModel.getViewCount().toString() + " views");
         Glide.with(view)
                 .load(gameVideoViewModel.getImageUrl())
                 .centerCrop()
