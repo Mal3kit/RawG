@@ -28,7 +28,6 @@ public class GameVideoAdapter extends RecyclerView.Adapter<GameVideoViewHolder> 
     }
 
     public void bindViewModels(List<GameVideoViewModel> gameVideoViewModels) {
-        this.gameVideoViewModels.clear();
         this.gameVideoViewModels.addAll(gameVideoViewModels
                 .stream()
                 .collect(Collectors.toList()));
