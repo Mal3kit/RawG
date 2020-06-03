@@ -21,5 +21,6 @@ public interface GameDisplayRepository {
 
     Single<List<String>> getFavoriteGamesId();
 
-    Single<GameVideoSearchResponse> getVideosForFavoriteGames(String gameId);
+    Single<List<GameVideoSearchResponse>> getVideosForFavoriteGames();
+
 }
