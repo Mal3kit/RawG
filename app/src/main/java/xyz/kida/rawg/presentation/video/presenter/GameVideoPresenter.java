@@ -1,8 +1,5 @@
 package xyz.kida.rawg.presentation.video.presenter;
 
-import android.content.Intent;
-import android.net.Uri;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,8 +19,6 @@ public class GameVideoPresenter implements GameVideoContract.Presenter {
     private GameVideoContract.View view;
     private GameVideoToGameVideoViewModelMapper modelMapper;
 
-    private static final String YOUTUBE_URL = "https://www.youtube.com/watch?v=";
-
     public GameVideoPresenter(GameDisplayRepository repository, GameVideoToGameVideoViewModelMapper modelMapper) {
         this.compositeDisposable = new CompositeDisposable();
         this.repository = repository;
@@ -32,31 +27,18 @@ public class GameVideoPresenter implements GameVideoContract.Presenter {
 
     @Override
     public void getVideosForFavorites() {
-        compositeDisposable.add(repository.getFavoriteGamesId()
+        compositeDisposable.add(repository.getVideosForFavoriteGames()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(new DisposableSingleObserver<List<String>>() {
+                .subscribeWith(new DisposableSingleObserver<List<GameVideoSearchResponse>>() {
                     @Override
-                    public void onSuccess(List<String> strings) {
-                        for (String s : strings) {
-                            compositeDisposable.add(repository.getVideosForFavoriteGames(s)
-                                    .subscribeOn(Schedulers.io())
-                                    .observeOn(AndroidSchedulers.mainThread())
-                                    .subscribeWith(new DisposableSingleObserver<GameVideoSearchResponse>() {
-                                        @Override
-                                        public void onSuccess(GameVideoSearchResponse gameVideoSearchResponse) {
-                                            view.displayVideosForFavoritesGames(gameVideoSearchResponse.getGameVideos()
-                                                    .stream()
-                                                    .map(gameVideo -> modelMapper.toGameVideoViewModel(gameVideo))
-                                                    .collect(Collectors.toList()));
-                                        }
-
-                                        @Override
-                                        public void onError(Throwable e) {
-                                            System.err.println("Error : " +e.getMessage());
-                                        }
-                                    }));
-                        }
+                    public void onSuccess(List<GameVideoSearchResponse> gameVideoSearchResponses) {
+                        view.displayVideosForFavoritesGames(gameVideoSearchResponses
+                                .stream()
+                                .flatMap(gameVideoSearchResponse -> gameVideoSearchResponse.getGameVideos()
+                                        .stream()
+                                        .map(gameVideo -> modelMapper.toGameVideoViewModel(gameVideo)))
+                                .collect(Collectors.toList()));
                     }
 
                     @Override
@@ -64,7 +46,6 @@ public class GameVideoPresenter implements GameVideoContract.Presenter {
                         System.err.println("Error : " +e.getMessage());
                     }
                 }));
-
     }
 
     @Override

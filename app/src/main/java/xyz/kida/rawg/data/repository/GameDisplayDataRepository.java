@@ -1,12 +1,12 @@
 package xyz.kida.rawg.data.repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.CompletableSource;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
+import io.reactivex.SingleSource;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import xyz.kida.rawg.data.api.models.Game;
@@ -78,7 +78,19 @@ public class GameDisplayDataRepository implements GameDisplayRepository {
     }
 
     @Override
-    public Single<GameVideoSearchResponse> getVideosForFavoriteGames(String gameId) {
-        return gameDisplayRemoteDataSource.getVideoSearchResponse(gameId);
+    public Single<List<GameVideoSearchResponse>> getVideosForFavoriteGames() {
+        return gameDisplayLocalDataSource.getCollectionListId()
+                .flatMap(new Function<List<String>, SingleSource<List<GameVideoSearchResponse>>>() {
+                    @Override
+                    public SingleSource<List<GameVideoSearchResponse>> apply(List<String> strings) throws Exception {
+                        return Flowable.fromIterable(strings)
+                                .flatMapSingle(new Function<String, SingleSource<GameVideoSearchResponse>>() {
+                                    @Override
+                                    public SingleSource<GameVideoSearchResponse> apply(String s) throws Exception {
+                                        return gameDisplayRemoteDataSource.getVideoSearchResponse(s);
+                                    }
+                                }).toList();
+                    }
+                });
     }
 }
