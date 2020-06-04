@@ -15,7 +15,7 @@ public interface GameDisplayRepository {
 
     Flowable<List<GameEntity>> loadFavorites();
 
-    Completable addGameToCollection(String gameId);
+    Completable addGameToFavorites(String gameId);
 
     Completable removeGameFromFavorites(String gameId);
 

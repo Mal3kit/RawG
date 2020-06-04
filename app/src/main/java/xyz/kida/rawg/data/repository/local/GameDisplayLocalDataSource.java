@@ -16,15 +16,15 @@ public class GameDisplayLocalDataSource {
         this.gameDatabase = gameDatabase;
     }
 
-    public Flowable<List<GameEntity>> loadCollection() {
+    public Flowable<List<GameEntity>> loadFavorites() {
         return gameDatabase.gameDao().loadCollection();
     }
 
-    public Completable addGameToCollection(GameEntity gameEntity) {
+    public Completable addGameToFavorites(GameEntity gameEntity) {
         return gameDatabase.gameDao().addGameToCollection(gameEntity);
     }
 
-    public Completable deleteGameFromCollection(String gameId) {
+    public Completable deleteGameFromFavorites(String gameId) {
         return gameDatabase.gameDao().deleteGameFromCollection(gameId);
     }
 

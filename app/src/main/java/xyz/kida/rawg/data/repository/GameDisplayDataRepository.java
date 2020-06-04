@@ -47,11 +47,11 @@ public class GameDisplayDataRepository implements GameDisplayRepository {
 
     @Override
     public Flowable<List<GameEntity>> loadFavorites() {
-        return gameDisplayLocalDataSource.loadCollection();
+        return gameDisplayLocalDataSource.loadFavorites();
     }
 
     @Override
-    public Completable addGameToCollection(String gameId) {
+    public Completable addGameToFavorites(String gameId) {
         return gameDisplayRemoteDataSource.getGameDetails(gameId)
                 .map(new Function<Game, GameEntity>() {
                     @Override
@@ -62,14 +62,14 @@ public class GameDisplayDataRepository implements GameDisplayRepository {
                 .flatMapCompletable(new Function<GameEntity, CompletableSource>() {
                     @Override
                     public CompletableSource apply(GameEntity gameEntity) throws Exception {
-                        return gameDisplayLocalDataSource.addGameToCollection(gameEntity);
+                        return gameDisplayLocalDataSource.addGameToFavorites(gameEntity);
                     }
                 });
     }
 
     @Override
     public Completable removeGameFromFavorites(String gameId) {
-        return gameDisplayLocalDataSource.deleteGameFromCollection(gameId);
+        return gameDisplayLocalDataSource.deleteGameFromFavorites(gameId);
     }
 
     @Override

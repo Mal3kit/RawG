@@ -49,7 +49,7 @@ public class SearchPresenter implements SearchContract.Presenter {
 
     @Override
     public void addGameToFavorites(String gameID) {
-        compositeDisposable.add(repository.addGameToCollection(gameID)
+        compositeDisposable.add(repository.addGameToFavorites(gameID)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableCompletableObserver() {
