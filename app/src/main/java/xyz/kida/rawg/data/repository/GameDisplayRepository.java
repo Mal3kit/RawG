@@ -19,8 +19,6 @@ public interface GameDisplayRepository {
 
     Completable removeGameFromFavorites(String gameId);
 
-    Single<List<String>> getFavoriteGamesId();
-
     Single<List<GameVideoSearchResponse>> getVideosForFavoriteGames();
 
 }

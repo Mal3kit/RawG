@@ -73,11 +73,6 @@ public class GameDisplayDataRepository implements GameDisplayRepository {
     }
 
     @Override
-    public Single<List<String>> getFavoriteGamesId() {
-        return gameDisplayLocalDataSource.getCollectionListId();
-    }
-
-    @Override
     public Single<List<GameVideoSearchResponse>> getVideosForFavoriteGames() {
         return gameDisplayLocalDataSource.getCollectionListId()
                 .flatMap(new Function<List<String>, SingleSource<List<GameVideoSearchResponse>>>() {
